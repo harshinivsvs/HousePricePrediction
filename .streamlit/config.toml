@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#E07A5F"          # Soft Terracotta Peach (For buttons and highlights)
+backgroundColor = "#FFF3EE"       # Bright Creamy Peach (Main background)
+secondaryBackgroundColor = "#F7E5DE" # Muted Pastel Peach (For input boxes & sidebar)
+textColor = "#3D3431"             # Deep Earthy Brown (Dark text for high contrast)
+font = "sans serif"
