@@ -20,14 +20,13 @@ st.markdown("""
 
 This application predicts **house prices** using a **Linear Regression Machine Learning Model**.
 
-The project demonstrates the complete Machine Learning workflow including:
-
+### Project Modules
 - 📊 Data Analysis
-- 🤖 Model Building
-- 📈 Model Performance Evaluation
-- 💰 House Price Prediction
+- 📈 Model Performance
+- 💰 Predict House Price
+- ℹ️ About
 
-👈 **Use the sidebar on the left to navigate between pages.**
+👈 Use the **Streamlit sidebar** on the left to navigate between pages.
 """)
 
 st.divider()
@@ -37,48 +36,42 @@ st.divider()
 # --------------------------------------------------
 st.header("📌 Project Workflow")
 
-col1, col2, col3, col4 = st.columns(4)
+c1, c2, c3, c4 = st.columns(4)
 
-with col1:
+with c1:
     st.info("""
 ### 📊 Data Analysis
-
 - Dataset Preview
 - Statistical Summary
 - Missing Values
 - Correlation Heatmap
-- Data Visualization
+- Visualizations
 """)
 
-with col2:
+with c2:
     st.success("""
 ### 🤖 Model Building
-
 - Data Preprocessing
-- Feature Selection
-- Train-Test Split
-- Linear Regression Model
+- Train/Test Split
+- Linear Regression
+- Model Training
 """)
 
-with col3:
+with c3:
     st.warning("""
 ### 📈 Model Performance
-
 - MAE
 - RMSE
 - R² Score
 - Residual Analysis
-- Actual vs Predicted
 """)
 
-with col4:
+with c4:
     st.error("""
 ### 💰 Prediction
-
 - User Input
-- Price Prediction
+- House Price Prediction
 - Property Category
-- Prediction Summary
 """)
 
 st.divider()
@@ -88,18 +81,18 @@ st.divider()
 # --------------------------------------------------
 st.header("🛠 Technologies Used")
 
-c1, c2, c3, c4 = st.columns(4)
+a, b, c, d = st.columns(4)
 
-with c1:
+with a:
     st.metric("Language", "Python")
 
-with c2:
+with b:
     st.metric("Framework", "Streamlit")
 
-with c3:
-    st.metric("ML Library", "Scikit-Learn")
+with c:
+    st.metric("ML", "Scikit-Learn")
 
-with c4:
+with d:
     st.metric("Dataset", "USA Housing")
 
 st.divider()
@@ -110,15 +103,13 @@ st.divider()
 st.header("🎯 Project Objective")
 
 st.write("""
-The objective of this project is to estimate house prices using the following features:
+Predict house prices using:
 
 - 💰 Average Area Income
 - 🏡 Average Area House Age
 - 🚪 Average Number of Rooms
 - 🛏 Average Number of Bedrooms
 - 👨‍👩‍👧 Area Population
-
-The prediction model is built using **Linear Regression**, a supervised machine learning algorithm.
 """)
 
 st.divider()
@@ -128,34 +119,17 @@ st.divider()
 # --------------------------------------------------
 st.header("📂 Dataset Information")
 
-col1, col2 = st.columns(2)
+x, y = st.columns(2)
 
-with col1:
-    st.write("**Dataset Name:** USA Housing Dataset")
-    st.write("**Number of Records:** 5000")
+with x:
+    st.write("**Dataset:** USA Housing")
+    st.write("**Records:** 5000")
     st.write("**Target Variable:** Price")
 
-with col2:
-    st.write("**Machine Learning Algorithm:** Linear Regression")
-    st.write("**Number of Features:** 5")
+with y:
+    st.write("**Algorithm:** Linear Regression")
+    st.write("**Features:** 5")
     st.write("**Deployment:** Streamlit Cloud")
-
-st.divider()
-
-# --------------------------------------------------
-# Application Features
-# --------------------------------------------------
-st.header("✨ Application Features")
-
-st.markdown("""
-- 📊 Interactive Data Analysis Dashboard
-- 📈 Machine Learning Model Evaluation
-- 💰 Real-Time House Price Prediction
-- 📉 Correlation Heatmap
-- 📋 Statistical Summary
-- 🤖 Linear Regression Model
-- 🌐 Deployed using Streamlit Cloud
-""")
 
 st.divider()
 
@@ -167,26 +141,19 @@ st.header("🚀 How to Use")
 st.markdown("""
 1. Open **Data Analysis** to explore the dataset.
 2. Open **Model Performance** to view evaluation metrics.
-3. Open **Predict House Price** and enter house details.
-4. Click **Predict House Price** to estimate the price.
-5. Open **About** to learn more about the project.
+3. Open **Predict House Price** to estimate a house price.
+4. Open **About** to learn more about the project.
 """)
-
-st.info("👈 Use the Streamlit sidebar (automatically shown on the left) to switch between pages.")
 
 st.divider()
 
 # --------------------------------------------------
 # Developer
 # --------------------------------------------------
-st.header("👩‍💻 Developer")
+st.markdown("### 👩‍💻 Developed By")
 
 st.write("**Harshini Vedulla**")
 st.write("B.Tech Computer Science and Engineering")
 st.write("Amrita Vishwa Vidyapeetham")
 
-st.divider()
-
-st.success("🎉 Welcome to the AI House Price Prediction System!")
-
-st.caption("Developed using Python • Streamlit • Scikit-Learn")
+st.caption("Powered by Python • Streamlit • Scikit-Learn")
