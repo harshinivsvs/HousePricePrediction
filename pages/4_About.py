@@ -1,41 +1,96 @@
 import streamlit as st
 
-# ---------------------------------------------------
-# Page Configuration
-# ---------------------------------------------------
 st.set_page_config(
-    page_title="About",
-    page_icon="ℹ️",
-    layout="wide"
+    page_title="AI House Price Prediction",
+    page_icon="🏠",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# ---------------------------------------------------
-# Title
-# ---------------------------------------------------
-st.title("ℹ️ About This Project")
+st.title("🏠 AI House Price Prediction System")
 
-st.write("""
-Welcome to the **House Price Prediction System**.
+st.sidebar.title("🏠 Navigation")
+st.sidebar.page_link("app.py", label="🏠 Home", icon="🏠")
+st.sidebar.page_link("pages/1_Data_Analysis.py", label="📊 Data Analysis", icon="📊")
+st.sidebar.page_link("pages/2_Model_Performance.py", label="📈 Model Performance", icon="📈")
+st.sidebar.page_link("pages/3_Predict_House_Price.py", label="💰 Predict House Price", icon="💰")
+st.sidebar.page_link("pages/4_About.py", label="ℹ️ About", icon="ℹ️")
 
-This application uses **Machine Learning** to estimate house prices based on
-different housing features. It is developed as a mini project to demonstrate
-the complete Machine Learning workflow, including data analysis, model training,
-performance evaluation, and prediction.
+st.markdown("""
+## Welcome 👋
+
+This application predicts **house prices** using a **Linear Regression Machine Learning Model**.
+
+### Project Modules
+- 📊 Data Analysis
+- 📈 Model Performance
+- 💰 Predict House Price
+- ℹ️ About
+
+Use the **sidebar** to navigate through the project.
 """)
 
 st.divider()
 
-# ---------------------------------------------------
-# Project Overview
-# ---------------------------------------------------
-st.header("📌 Project Overview")
+st.header("📌 Project Workflow")
 
+c1,c2,c3,c4 = st.columns(4)
+
+with c1:
+    st.info("""
+### 📊 Data Analysis
+- Dataset Preview
+- Statistical Summary
+- Missing Values
+- Correlation Heatmap
+- Visualizations
+""")
+
+with c2:
+    st.success("""
+### 🤖 Model Building
+- Data Preprocessing
+- Train/Test Split
+- Linear Regression
+- Model Training
+""")
+
+with c3:
+    st.warning("""
+### 📈 Model Performance
+- MAE
+- RMSE
+- R² Score
+- Residual Analysis
+""")
+
+with c4:
+    st.error("""
+### 💰 Prediction
+- User Input
+- House Price Prediction
+- Property Category
+""")
+
+st.divider()
+
+st.header("🛠 Technologies Used")
+
+a,b,c,d = st.columns(4)
+with a:
+    st.metric("Language","Python")
+with b:
+    st.metric("Framework","Streamlit")
+with c:
+    st.metric("ML","Scikit-Learn")
+with d:
+    st.metric("Dataset","USA Housing")
+
+st.divider()
+
+st.header("🎯 Project Objective")
 st.write("""
-The House Price Prediction System predicts the estimated price of a house
-using **Linear Regression**, a supervised machine learning algorithm.
-
-The prediction is based on the following housing features:
-
+Predict house prices using:
 - 💰 Average Area Income
 - 🏡 Average Area House Age
 - 🚪 Average Number of Rooms
@@ -43,145 +98,35 @@ The prediction is based on the following housing features:
 - 👨‍👩‍👧 Area Population
 """)
 
-# ---------------------------------------------------
-# Technologies Used
-# ---------------------------------------------------
-st.header("🛠 Technologies Used")
-
-st.markdown("""
-- **Python**
-- **Streamlit**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **Seaborn**
-- **Scikit-learn**
-- **Joblib**
-""")
-
-# ---------------------------------------------------
-# Machine Learning Workflow
-# ---------------------------------------------------
-st.header("⚙️ Machine Learning Workflow")
-
-st.markdown("""
-1. Load Dataset
-2. Data Cleaning
-3. Exploratory Data Analysis (EDA)
-4. Feature Selection
-5. Train-Test Split
-6. Linear Regression Model Training
-7. Model Evaluation
-8. House Price Prediction
-""")
-
-# ---------------------------------------------------
-# Model Information
-# ---------------------------------------------------
-st.header("🤖 Model Information")
-
-st.write("""
-**Algorithm Used:** Linear Regression
-
-Linear Regression predicts the house price by finding the relationship between
-the input features and the target variable (Price).
-
-The model was evaluated using:
-
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- R² Score
-""")
-
-# ---------------------------------------------------
-# Dataset Information
-# ---------------------------------------------------
-st.header("📊 Dataset Information")
-
-st.write("""
-The project uses the **USA Housing Dataset**.
-
-The dataset contains **5,000 records** with **7 columns**:
-
-- Avg. Area Income
-- Avg. Area House Age
-- Avg. Area Number of Rooms
-- Avg. Area Number of Bedrooms
-- Area Population
-- Price
-- Address
-""")
-
-# ---------------------------------------------------
-# Features of the Application
-# ---------------------------------------------------
-st.header("✨ Features")
-
-st.markdown("""
-✅ Home Dashboard
-
-✅ Data Analysis Dashboard
-
-✅ Correlation Heatmap
-
-✅ Statistical Summary
-
-✅ Model Performance Evaluation
-
-✅ House Price Prediction
-
-✅ Interactive User Interface
-
-✅ Machine Learning Powered Predictions
-""")
-
-# ---------------------------------------------------
-# Advantages
-# ---------------------------------------------------
-st.header("🎯 Advantages")
-
-st.markdown("""
-- Fast price prediction
-- Easy to use interface
-- Accurate Machine Learning model
-- Interactive visualizations
-- Beginner-friendly implementation
-""")
-
-# ---------------------------------------------------
-# Future Enhancements
-# ---------------------------------------------------
-st.header("🚀 Future Enhancements")
-
-st.markdown("""
-- Deploy the application online
-- Add multiple Machine Learning algorithms
-- Improve prediction accuracy
-- Accept CSV file uploads
-- Add real estate market trends
-- Integrate maps and location-based pricing
-""")
-
-# ---------------------------------------------------
-# Developer
-# ---------------------------------------------------
-st.header("👩‍💻 Developer")
-
-st.write("""
-**Name:** Harshini Vedulla
-
-**Course:** B.Tech Computer Science and Engineering
-
-**Project:** House Price Prediction using Machine Learning
-
-**Framework:** Streamlit
-""")
-
-# ---------------------------------------------------
-# Footer
-# ---------------------------------------------------
 st.divider()
 
-st.success("🎉 Thank you for exploring the House Price Prediction System!")
+st.header("📂 Dataset Information")
 
-st.caption("Developed using Python, Streamlit, and Machine Learning")
+x,y = st.columns(2)
+with x:
+    st.write("**Dataset:** USA Housing")
+    st.write("**Records:** 5000")
+    st.write("**Target Variable:** Price")
+with y:
+    st.write("**Algorithm:** Linear Regression")
+    st.write("**Features:** 5")
+    st.write("**Deployment:** Streamlit Cloud")
+
+st.divider()
+
+st.header("🚀 How to Use")
+st.markdown("""
+1. Open **Data Analysis** to explore the dataset.
+2. Open **Model Performance** to view evaluation metrics.
+3. Open **Predict House Price** to estimate a house price.
+4. Open **About** to learn more about the project.
+""")
+
+st.divider()
+
+st.markdown("### 👩‍💻 Developed By")
+st.write("**Harshini Vedulla**")
+st.write("B.Tech Computer Science and Engineering")
+st.write("Amrita Vishwa Vidyapeetham")
+
+st.caption("Powered by Python • Streamlit • Scikit-Learn")
