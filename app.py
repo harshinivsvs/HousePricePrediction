@@ -11,21 +11,22 @@ st.set_page_config(
 )
 
 # ----------------------------------------
-# Sidebar
+# Sidebar Navigation
 # ----------------------------------------
 st.sidebar.title("🏠 Navigation")
-st.sidebar.success("Select a page from below")
 
-st.sidebar.markdown("""
-### 📂 Project Pages
+st.sidebar.page_link("app.py", label="🏠 Home", icon="🏠")
+st.sidebar.page_link("pages/1_Data_Analysis.py", label="📊 Data Analysis", icon="📊")
+st.sidebar.page_link("pages/2_Model_Performance.py", label="📈 Model Performance", icon="📈")
+st.sidebar.page_link("pages/3_Predict_House_Price.py", label="💰 Predict House Price", icon="💰")
+st.sidebar.page_link("pages/4_About.py", label="ℹ️ About", icon="ℹ️")
 
-- 📊 Data Analysis
-- 📈 Model Performance
-- 💰 Predict House Price
-- ℹ️ About
+st.sidebar.divider()
 
-Use the sidebar to navigate through the application.
-""")
+st.sidebar.success("AI House Price Prediction")
+st.sidebar.write(
+    "Navigate through the project using the links above."
+)
 
 # ----------------------------------------
 # Main Title
@@ -37,18 +38,18 @@ st.markdown("""
 
 This application predicts **house prices** using a **Linear Regression Machine Learning Model**.
 
-The project demonstrates the complete Machine Learning workflow, including:
+The project demonstrates the complete Machine Learning workflow including:
 
-- Data Analysis
-- Model Building
-- Model Evaluation
-- House Price Prediction
+- 📊 Data Analysis
+- 🤖 Model Building
+- 📈 Model Evaluation
+- 💰 House Price Prediction
 """)
 
 st.divider()
 
 # ----------------------------------------
-# Project Workflow
+# Workflow
 # ----------------------------------------
 st.header("📌 Project Workflow")
 
@@ -61,8 +62,8 @@ with col1:
 - Dataset Preview
 - Statistical Summary
 - Missing Values
-- Correlation Heatmap
-- Distribution Graphs
+- Correlation Analysis
+- Visualizations
 """)
 
 with col2:
@@ -71,8 +72,8 @@ with col2:
 
 - Data Preprocessing
 - Feature Selection
-- Train-Test Split
-- Linear Regression Training
+- Train/Test Split
+- Linear Regression
 """)
 
 with col3:
@@ -82,8 +83,7 @@ with col3:
 - MAE
 - RMSE
 - R² Score
-- Actual vs Predicted
-- Residual Analysis
+- Prediction Graph
 """)
 
 with col4:
@@ -91,7 +91,7 @@ with col4:
 ### 💰 Prediction
 
 - User Input
-- House Price Estimation
+- Estimated Price
 - Prediction Summary
 """)
 
@@ -119,12 +119,12 @@ with c4:
 st.divider()
 
 # ----------------------------------------
-# Project Objective
+# Objective
 # ----------------------------------------
 st.header("🎯 Project Objective")
 
 st.write("""
-The objective of this project is to estimate the price of a house based on the following features:
+The goal of this project is to predict house prices based on:
 
 - 💰 Average Area Income
 - 🏡 Average Area House Age
@@ -132,7 +132,7 @@ The objective of this project is to estimate the price of a house based on the f
 - 🛏 Average Number of Bedrooms
 - 👨‍👩‍👧 Area Population
 
-The model uses **Linear Regression**, a supervised machine learning algorithm, to predict house prices accurately.
+A Linear Regression model is trained on the USA Housing dataset to estimate house prices.
 """)
 
 st.divider()
@@ -145,42 +145,22 @@ st.header("📂 Dataset Information")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write("**Dataset Name:** USA Housing Dataset")
-    st.write("**Number of Records:** 5000")
-    st.write("**Target Variable:** Price")
+    st.write("**Dataset:** USA Housing")
+    st.write("**Records:** 5000")
+    st.write("**Target:** Price")
 
 with col2:
-    st.write("**Machine Learning Algorithm:** Linear Regression")
-    st.write("**Features Used:** 5")
-    st.write("**Programming Language:** Python")
-
-st.divider()
-
-# ----------------------------------------
-# How to Use
-# ----------------------------------------
-st.header("🚀 How to Use")
-
-st.markdown("""
-1. 📊 Explore the dataset in **Data Analysis**.
-2. 📈 View model evaluation in **Model Performance**.
-3. 💰 Predict house prices in **Predict House Price**.
-4. ℹ️ Learn more about the project in **About**.
-""")
-
-st.success("👈 Use the sidebar on the left to navigate between pages.")
+    st.write("**Algorithm:** Linear Regression")
+    st.write("**Features:** 5")
+    st.write("**Framework:** Streamlit")
 
 st.divider()
 
 # ----------------------------------------
 # Footer
 # ----------------------------------------
-st.markdown("### 🏠 AI House Price Prediction")
-
-st.write("**Developed by:** Harshini Vedulla")
-
-st.write("**Course:** B.Tech Computer Science and Engineering")
-
-st.write("**University:** Amrita Vishwa Vidyapeetham")
+st.markdown("### 👨‍💻 Developed By")
+st.write("**Harshini Vedulla**")
+st.write("B.Tech CSE | Amrita Vishwa Vidyapeetham")
 
 st.caption("Powered by Python • Streamlit • Scikit-Learn")
